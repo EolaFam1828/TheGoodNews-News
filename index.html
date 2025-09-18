@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Good News, News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFDFD;
+        }
+        .font-lora {
+            font-family: 'Lora', serif;
+        }
+        .brand-gradient {
+            background: linear-gradient(to right, #4CAF50, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background-color: #f3f4f6;
+            background-image: radial-gradient(#dbeafe 1.5px, transparent 1.5px);
+            background-size: 30px 30px;
+        }
+        .loader {
+            border-top-color: #4CAF50;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-black brand-gradient">🌍 The Good News, News</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-green-600 transition duration-300">Our Mission</a>
+                <a href="#latest-news" class="text-gray-600 hover:text-green-600 transition duration-300">Today's Good News</a>
+                <a href="#categories" class="text-gray-600 hover:text-green-600 transition duration-300">Categories</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="#about" class="block py-2 text-gray-600 hover:text-green-600 transition duration-300">Our Mission</a>
+             <a href="#latest-news" class="block py-2 text-gray-600 hover:text-green-600 transition duration-300">Today's Good News</a>
+             <a href="#categories" class="block py-2 text-gray-600 hover:text-green-600 transition duration-300">Categories</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-4">Because the world deserves more than fear and tragedy.</h2>
+                <p class="font-lora text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">What’s right with the world, today.</p>
+                <a href="#latest-news" class="mt-8 inline-block bg-green-500 text-white font-bold rounded-lg px-8 py-3 hover:bg-green-600 transition duration-300 transform hover:scale-105 shadow-lg">See The Good News</a>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h3 class="text-3xl font-bold mb-8 relative inline-block">
+                        Our Mission Is Simple: To Balance The Record.
+                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-green-200 rounded-full"></span>
+                    </h3>
+                    <p class="font-lora text-gray-600 text-lg leading-relaxed mb-6">Every day, headlines scream the same words: death, destruction, crime, despair. It’s a broken record we’ve all grown numb to. But here’s the truth: humanity is so much more than its worst moments.</p>
+                    <p class="font-lora text-gray-600 text-lg leading-relaxed mb-6">We’re inventing, healing, helping, laughing, creating, and overcoming—every single day. And yet, those stories rarely make the front page. That’s where we come in.</p>
+                    <p class="font-lora text-gray-600 text-lg leading-relaxed font-bold">Not with fluff. Not with denial. But with real stories of good—acts of kindness, breakthroughs in science, communities rising, resilience after hardship, and proof that hope is not naïve—it’s necessary.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Good News Section -->
+        <section id="latest-news" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h3 class="text-3xl font-bold text-center mb-12">Today's Good News</h3>
+                <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Loading Skeletons -->
+                    <div class="loader-skeleton bg-white p-6 rounded-lg shadow-md animate-pulse">
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+                        <div class="h-3 bg-gray-200 rounded w-full mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-full mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-5/6 mb-4"></div>
+                        <div class="h-8 bg-gray-200 rounded-full w-32 mt-4"></div>
+                    </div>
+                    <div class="loader-skeleton bg-white p-6 rounded-lg shadow-md animate-pulse hidden md:block">
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+                        <div class="h-3 bg-gray-200 rounded w-full mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-full mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-5/6 mb-4"></div>
+                        <div class="h-8 bg-gray-200 rounded-full w-32 mt-4"></div>
+                    </div>
+                    <div class="loader-skeleton bg-white p-6 rounded-lg shadow-md animate-pulse hidden lg:block">
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+                        <div class="h-3 bg-gray-200 rounded w-full mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-full mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-5/6 mb-4"></div>
+                        <div class="h-8 bg-gray-200 rounded-full w-32 mt-4"></div>
+                    </div>
+                </div>
+                 <div id="error-message" class="hidden text-center text-red-500 bg-red-100 p-4 rounded-lg">
+                    <p><strong>Oops!</strong> We couldn't fetch the good news right now. Please try again later.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Categories Section -->
+        <section id="categories" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h3 class="text-3xl font-bold text-center mb-12">Explore More Goodness</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="p-6 bg-green-100 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="text-4xl mb-2">🔬</div>
+                        <h4 class="font-bold text-lg text-green-800">Science & Tech</h4>
+                    </div>
+                    <div class="p-6 bg-blue-100 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="text-4xl mb-2">🤝</div>
+                        <h4 class="font-bold text-lg text-blue-800">Community</h4>
+                    </div>
+                    <div class="p-6 bg-yellow-100 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="text-4xl mb-2">❤️</div>
+                        <h4 class="font-bold text-lg text-yellow-800">Kindness</h4>
+                    </div>
+                    <div class="p-6 bg-purple-100 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="text-4xl mb-2">🌱</div>
+                        <h4 class="font-bold text-lg text-purple-800">Environment</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-2xl font-black brand-gradient mb-2">The Good News, News</p>
+            <p class="text-gray-400">Because the world doesn’t need less news. It needs better news.</p>
+            <p class="text-gray-500 mt-4 text-sm">&copy; 2025 The Good News, News. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fetch good news on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchGoodNews();
+        });
+
+        async function fetchGoodNews() {
+            const newsContainer = document.getElementById('news-container');
+            const errorMessage = document.getElementById('error-message');
+            const skeletons = document.querySelectorAll('.loader-skeleton');
+
+            const systemPrompt = `You are a "Good News" curator. Your task is to find and summarize recent, genuinely positive, and uplifting news stories from around the world. Focus on stories about scientific breakthroughs, acts of kindness, community achievements, environmental progress, and human resilience. For each story, provide a concise headline and a short, engaging summary (2-3 sentences). Avoid sensationalism, politics, and stories that are merely 'not bad'. The tone should be hopeful and inspiring. Provide at least 3 distinct news items.`;
+            const userQuery = "Find me three recent pieces of good news. Summarize them with a headline and a short description.";
+            
+            // This is a placeholder for your API Key.
+            // In a real application, you should use a secure method to store and access this.
+            const apiKey = ""; // Leave empty, will be handled by the environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                tools: [{ "google_search": {} }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+                generationConfig: {
+                  responseMimeType: "application/json",
+                  responseSchema: {
+                      type: "ARRAY",
+                      items: {
+                          type: "OBJECT",
+                          properties: {
+                              "headline": { "type": "STRING" },
+                              "summary": { "type": "STRING" },
+                              "source": { "type": "STRING" }
+                          },
+                          required: ["headline", "summary", "source"]
+                      }
+                  }
+              }
+            };
+            
+            let retries = 3;
+            let delay = 1000;
+
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+
+                    if (candidate && candidate.content?.parts?.[0]?.text) {
+                        const newsData = JSON.parse(candidate.content.parts[0].text);
+                        displayNews(newsData);
+                        return; // Success, exit the loop
+                    } else {
+                         throw new Error("Invalid response structure from API.");
+                    }
+                } catch (error) {
+                    console.error(`Attempt ${i + 1} failed:`, error);
+                    if (i < retries - 1) {
+                        await new Promise(res => setTimeout(res, delay));
+                        delay *= 2; // Exponential backoff
+                    } else {
+                        // All retries failed
+                        newsContainer.innerHTML = ''; // Clear skeletons
+                        errorMessage.classList.remove('hidden');
+                    }
+                }
+            }
+        }
+
+        function displayNews(newsItems) {
+            const newsContainer = document.getElementById('news-container');
+            const errorMessage = document.getElementById('error-message');
+            
+            newsContainer.innerHTML = ''; // Clear loading skeletons
+            errorMessage.classList.add('hidden');
+
+            if (!newsItems || newsItems.length === 0) {
+                 errorMessage.classList.remove('hidden');
+                 return;
+            }
+
+            newsItems.forEach(item => {
+                const newsCard = document.createElement('div');
+                newsCard.className = 'bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col';
+                
+                newsCard.innerHTML = `
+                    <h4 class="text-xl font-bold mb-2 text-gray-900">${item.headline}</h4>
+                    <p class="text-gray-600 font-lora flex-grow">${item.summary}</p>
+                    <a href="${item.source}" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-green-100 text-green-800 font-semibold rounded-full px-4 py-2 text-sm hover:bg-green-200 transition duration-300 self-start">
+                        Read More &rarr;
+                    </a>
+                `;
+                newsContainer.appendChild(newsCard);
+            });
+        }
+    </script>
+
+</body>
+</html>
